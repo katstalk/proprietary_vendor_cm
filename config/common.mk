@@ -143,7 +143,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES +=  \
     vendor/cm/proprietary/Term.apk:system/app/Term.apk \
     vendor/cm/proprietary/lib/armeabi/libjackpal-androidterm4.so:system/lib/libjackpal-androidterm4.so \
-    vendor/cm/prebuilt/hololauncherhd/HoloLauncherHD.apk:system/app/HoloLauncherHD.apk \
     vendor/cm/prebuilt/Nova.apk:system/app/Nova.apk \
     vendor/cm/prebuilt/appsetting.apk:system/app/appsetting.apk \
     vendor/cm/prebuilt/xposed_installer.apk:system/app/xposed_installer.apk
@@ -191,19 +190,17 @@ PRODUCT_PACKAGES += \
 # Custom CM packages
 PRODUCT_PACKAGES += \
     Launcher3 \
-    Trebuchet \
     DSPManager \
     libcyanogen-dsp \
     audio_effects.conf \
     ScreenRecorder \
     libscreenrecorder \
-    BeanStalkPapers \
-    BeanStalkOTA \
+    katstalkPapers \
+    katstalkOTA \
     Apollo \
     MonthCalendarWidget \
     LockClock \
-    DashClock \
-    StalkExplorer
+    DashClock
 
 PRODUCT_PACKAGES += \
     CellBroadcastReceiver
@@ -301,17 +298,17 @@ endif
 else
 # If CM_BUILDTYPE is not defined, set to UNOFFICIAL
     CM_BUILDTYPE := UNOFFICIAL
-    CM_EXTRAVERSION :=
+    CM_EXTRAVERSION := -wantowan2
 endif
 
-Bean_Version=4.4.285
-CM_VERSION := BeanStalk-$(Bean_Version)-$(shell date -u +%Y%m%d)$(CM_EXTRAVERSION)-$(CM_BUILD)
+Bean_Version=4.4.300
+CM_VERSION := katstalk-$(kat_Version)-$(shell date -u +%Y%m%d)$(CM_EXTRAVERSION)-$(CM_BUILD)
 
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.cm.version=$(CM_VERSION) \
   ro.modversion=$(CM_VERSION) \
   ro.bs=true \
-  ro.goo.developerid=beanstalk \
+  ro.goo.developerid=Beanstalk \
   ro.goo.rom=$(CM_BUILD) \
   ro.goo.version=22
 
